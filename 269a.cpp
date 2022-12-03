@@ -1,0 +1,17 @@
+#include<iostream>
+#include<vector>
+#include<cmath>
+#include<algorithm>
+#include<string>
+using namespace std;
+
+
+int main(){
+
+  int a,b,c,d;
+  cin>>a>>b>>c>>d;
+
+  cout<<(a+b)*(c-d)<<endl;
+  cout<<"Takahashi"<<endl;
+
+}
