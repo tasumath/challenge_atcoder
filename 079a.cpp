@@ -1,29 +1,25 @@
 #include<iostream>
 #include<vector>
 #include<cmath>
+#include<algorithm>
+#include<functional>
+#include<map>
+#include<string>
+#include<set>
+#include<queue>
 using namespace std;
 
-int main(void){
-int N; cin>>N;
+int main(){
+    string n; cin>>n;
+    int f = n[0] - '0';
+    int s = n[1] - '0';
+    int t = n[2] - '0';
+    int g = n[3] - '0';
 
-int a=N/1000;
-int b=(N-a*1000)/100;
-int c=(N-a*1000-b*100)/10;
-int d=(N-a*1000-b*100-c*10);
+    bool hantei = false;
+    if((f==s && s==t) || (s==t && t==g)) hantei =true;
 
-if(a==b && b==c){
-  cout<<"Yes"<<endl;
-  return 0;
-}
-
-if(b==c && c==d){
-  cout<<"Yes"<<endl;
-  return 0;
-}
-
-else cout<<"No"<<endl;
-
+    if(hantei) cout<<"Yes"<<endl;
+    else cout<<"No"<<endl;
 
 }
-
-//if(a==b==c)とは出来ない。if(a==b && b==c)とすること。

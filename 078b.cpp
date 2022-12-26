@@ -10,7 +10,7 @@
 using namespace std;
 
 int main(){
-    int n,a,b; cin>>n>>a>>b;
-    if(n*a < b) cout<<n*a<<endl;
-    else cout<<b<<endl;
+    int x,y,z; cin>>x>>y>>z;
+    x = x - z;
+    cout<<x/(y+z)<<endl;
 }

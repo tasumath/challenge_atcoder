@@ -10,7 +10,8 @@
 using namespace std;
 
 int main(){
-    int n,a,b; cin>>n>>a>>b;
-    if(n*a < b) cout<<n*a<<endl;
-    else cout<<b<<endl;
+    double a,b; cin>>a>>b;
+    double ans = (a+b)/2;
+    cout<<round(ans)<<endl;
+    
 }
