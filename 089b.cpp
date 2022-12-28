@@ -1,44 +1,37 @@
 #include<iostream>
 #include<vector>
 #include<cmath>
+#include<algorithm>
+#include<functional>
+#include<map>
+#include<string>
+#include<set>
+#include<queue>
 using namespace std;
 
 int main(){
-  int N; cin>>N;
-int pcount=0;
-int wcount=0;
-int gcount=0;
-int ycount=0;
+    int n; cin>>n;
+    int cnt[1001];
 
-//単に一文字の格納ならcharを使うこと。
-for(int i=0;i<N;i++){
-    char S;
-    cin>>S;
-    if(S=='P') pcount++;
-    if(S=='W') wcount++;
-    if(S=='G') gcount++;
-    if(S=='Y') ycount++;
-}
+    for(int i=0;i<=1000;i++) cnt[i] = 0;
 
-if(pcount>0 && wcount>0 && gcount>0 && ycount>0){
-    cout<<"Four"<<endl;
-    return 0;
-}
-if(pcount>0 && wcount>0 && gcount>0){
-    cout<<"Three"<<endl;
-    return 0;
-}
-if(pcount>0 && wcount>0 && ycount>0){
-    cout<<"Three"<<endl;
-    return 0;
-}
-if(pcount>0 && ycount>0 && gcount>0){
-    cout<<"Three"<<endl;
-    return 0;
-}
-if(ycount>0 && wcount>0 && gcount>0){
-    cout<<"Three"<<endl;
-    return 0;
+    for(int i=0;i<n;i++){
+        char x; cin>>x;
+        if(x == 'P' || x == 'W' || x == 'G' || x == 'Y'){
+        //cout<<x<<endl;
+        int z = x - '0';
+        cnt[z] = cnt[z] + 1;
+        }
+    }
+
+    int sum = 0;
+    for(int i=0;i<=1000;i++){
+        if(cnt[i] > 0) sum = sum + 1;
+    }
+
+    if(sum==3) cout<<"Three"<<endl;
+    if(sum==4) cout<<"Four"<<endl;
 }
 
-}
+
+
